@@ -7008,6 +7008,18 @@ footer .footerRight .footerLinks li:first-of-type {
   transition: all 0.3s ease;
 }
 
+#editWindow .hideNav .demo-site-nav-list-item {
+  display: none;
+}
+
+#editWindow .hideNav .demo-site-nav-list-item.selected {
+  display: block;
+}
+
+#editWindow .show .demo-site-nav-list-item {
+  display: block;
+}
+
 body style, body > #micrositeWrapper > #editWindow > script {
   /* display: block; */
   overflow-x: scroll;

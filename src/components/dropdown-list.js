@@ -1,12 +1,40 @@
-import _ from 'lodash';
 import React from 'react';
 import DropDownListItem from './dropdown-list-item';
+
+const dropDown = [
+	{
+		label: 'Article',
+		url: 'http://productdevelopment.techtarget.com/projects/custom/prototypes/sales-tools/article',
+		active: true
+	},
+	{
+		label: 'Native Ad',
+		url: 'http://productdevelopment.techtarget.com/projects/custom/prototypes/sales-tools/native/',
+		active: false
+	},
+	{
+		label: 'Embedded - Center',
+		url: 'http://productdevelopment.techtarget.com/projects/custom/prototypes/sales-tools/embedded/Center',
+		active: false
+	},
+	{
+		label: 'Embedded - Dark',
+		url: 'http://productdevelopment.techtarget.com/projects/custom/prototypes/sales-tools/embedded/Dark',
+		active: false
+	},
+	{
+		label: 'Embedded - Light',
+		url: 'http://productdevelopment.techtarget.com/projects/custom/prototypes/sales-tools/embedded/Light',
+		active: false
+	}
+]
 
 export default class DropDownList extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
+			dropDown,
 			hide: true
 		};
 	}
@@ -24,9 +52,13 @@ export default class DropDownList extends React.Component {
 	}
 
 	renderItems() {
-		const props = _.omit(this.props, 'dropDown');
 
-		return _.map(this.props.dropDown, (todo, index) => <DropDownListItem key={index} {...todo} {...this.props} />);
+		return (
+			this.state.dropDown.map(function(val, index) {
+				return <DropDownListItem key={index} {...val} />;
+			})
+		)
+
 	}
 
 	render() {
@@ -35,6 +67,7 @@ export default class DropDownList extends React.Component {
 				<ul className="demo-site-nav-list">
 					{this.renderItems()}
 				</ul>
+				<i className="icon icon-arrow-down" data-icon="5"></i>
 			</div>
 		);
 	}
