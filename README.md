@@ -19,7 +19,7 @@ npm install
 ```
 
 
-This will install lodash, react, react-dom, babel-core, babel-loader, babel-preset-es2015, babel-preset-react, react-hot-loader, webpack, webpack-dev-server
+This will install react, react-dom, babel-core, babel-loader, babel-preset-es2015, babel-preset-react, react-hot-loader, webpack, webpack-dev-server
 
 ## Built With
 
